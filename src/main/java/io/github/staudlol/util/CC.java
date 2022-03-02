@@ -1,5 +1,11 @@
 package io.github.staudlol.util;
 
+/*
+ * Created by Kyle
+ * Project: Gradient
+ * Date: 02/03/2022 - 12:06
+ */
+
 import lombok.experimental.UtilityClass;
 import org.bukkit.ChatColor;
 

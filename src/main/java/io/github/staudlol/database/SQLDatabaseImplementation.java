@@ -1,15 +1,17 @@
 package io.github.staudlol.database;
 
+/*
+ * Created by Kyle
+ * Project: Gradient
+ * Date: 02/03/2022 - 12:35
+ */
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
 public abstract class SQLDatabaseImplementation {
 
-    public abstract Connection getConnection() throws SQLException;
-
-    public abstract void closeConnection() throws SQLException;
-
-    public void createTable(String table, String column) {
+    public void createTable(String table, String column) throws SQLException {
         try (Connection connection = this.getConnection()) {
             connection.createStatement()
                     .execute("CREATE TABLE IF NOT EXISTS " + table + " (" + column + ")");
@@ -17,4 +19,6 @@ public abstract class SQLDatabaseImplementation {
             exception.printStackTrace();
         }
     }
+
+    public abstract Connection getConnection() throws SQLException;
 }

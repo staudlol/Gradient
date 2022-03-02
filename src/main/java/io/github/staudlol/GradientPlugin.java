@@ -1,5 +1,11 @@
 package io.github.staudlol;
 
+/*
+ * Created by Kyle
+ * Project: Gradient
+ * Date: 02/03/2022 - 12:05
+ */
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class GradientPlugin extends JavaPlugin {

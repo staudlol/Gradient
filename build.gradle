@@ -11,16 +11,19 @@ repositories {
     mavenCentral()
     mavenLocal()
 
+    // Spigot
     maven {
         url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
 
+    // Jitpack
     maven {
         url 'https://jitpack.io'
     }
 
+    // Mongo
     maven {
-        url 'https://repo.codemc.org/repository/maven-public/'
+        url 'https://mvnrepository.com/artifact/org.mongodb/mongodb-driver'
     }
 }
 
@@ -29,6 +32,8 @@ dependencies {
             'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT',
             'org.projectlombok:lombok:1.18.22'
     )
+
+    implementation group: 'org.mongodb', name: 'mongodb-driver', version: '3.6.3'
 
     annotationProcessor('org.projectlombok:lombok:1.18.22')
 }
