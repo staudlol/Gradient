@@ -8,17 +8,25 @@ package io.github.staudlol.module;
 
 import lombok.Getter;
 
-import java.util.HashMap;
+import java.util.*;
 
 @Getter
 public class ModuleRegistry {
 
+    private final Map<Class<? extends Module>, Module> moduleMap = new HashMap<>();
+
     private transient static ModuleRegistry instance;
 
-    public HashMap<Module, ModuleState> moduleStateHashMap = new HashMap<>();
+    /**
+     * Constructor for creating a new {@link ModuleRegistry}
+     *
+     * @param modules the array of modules to register.
+     */
 
-    public static void setInstance(ModuleRegistry instance) {
-        ModuleRegistry.instance = instance;
+    public ModuleRegistry(Module... modules) {
+        instance = this;
+        Arrays.stream(modules)
+                .forEach(this::initiateModule);
     }
 
     /**
@@ -28,18 +36,19 @@ public class ModuleRegistry {
      */
 
     public void initiateModule(Module module) {
-        this.moduleStateHashMap.put(module, module.getModuleState());
+        this.moduleMap.put(module.getClass(), module);
     }
 
     /**
-     * Get the {@link ModuleState} of a {@link Module}
+     * Find a {@link Module} by a {@link Class}
      *
-     * @param module the module.
-     * @return the state of the module.
+     * @param clazz the class of the module.
+     * @param <T> the type of module.
+     * @return the module.
      */
 
-    public ModuleState getState(Module module) {
-        return this.moduleStateHashMap.get(module);
+    public <T extends Module> T findModule(Class<? extends T> clazz) {
+        return clazz.cast(this.moduleMap.get(clazz));
     }
 
     public static ModuleRegistry getInstance() {

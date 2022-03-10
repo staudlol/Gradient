@@ -11,9 +11,9 @@ import lombok.Getter;
 @Getter
 public abstract class Module implements ModuleController {
 
-    protected String moduleName;
+    private final ModuleRegistry registry = new ModuleRegistry();
 
-    protected ModuleState moduleState = ModuleState.ENABLED;
+    protected String moduleName;
 
     /**
      * Constructor to create a new {@link Module}
@@ -24,19 +24,6 @@ public abstract class Module implements ModuleController {
     public Module(String moduleName) {
         this.moduleName = moduleName;
 
-        ModuleRegistry.getInstance().initiateModule(this);
-    }
-
-    public void loadClass(Class... classes) {
-        for (Class clazz : classes)
-            this.loadClass(clazz);
-    }
-
-    public <T> void loadClass(Class<? extends T> clazz) {
-        try {
-            clazz.newInstance();
-        } catch (Exception exception) {
-            throw new IllegalArgumentException(exception.getClass().getSimpleName() + " : " + exception.getMessage());
-        }
+        this.registry.initiateModule(this);
     }
 }
