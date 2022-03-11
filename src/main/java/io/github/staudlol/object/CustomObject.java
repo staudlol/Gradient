@@ -8,7 +8,7 @@ package io.github.staudlol.object;
 
 import org.bukkit.entity.Player;
 
-public abstract class CustomObject {
+public interface CustomObject {
 
     /**
      * Spawn a custom object using the {@link Player}'s data.
@@ -17,5 +17,5 @@ public abstract class CustomObject {
      * @return the success rate.
      */
 
-    public abstract boolean spawn(Player player);
+    boolean spawn(Player player);
 }
