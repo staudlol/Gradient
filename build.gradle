@@ -11,17 +11,14 @@ repositories {
     mavenCentral()
     mavenLocal()
 
-    // Spigot
     maven {
         url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
 
-    // Jitpack
     maven {
         url 'https://jitpack.io'
     }
 
-    // Mongo
     maven {
         url 'https://mvnrepository.com/artifact/org.mongodb/mongodb-driver'
     }
