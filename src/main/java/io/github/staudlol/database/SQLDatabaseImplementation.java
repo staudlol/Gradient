@@ -6,12 +6,12 @@ package io.github.staudlol.database;
  * Date: 02/03/2022 - 12:35
  */
 
-import lombok.Builder;
+import lombok.Data;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@Builder
+@Data
 public abstract class SQLDatabaseImplementation {
 
     private final String host;

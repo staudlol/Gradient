@@ -6,9 +6,9 @@ package io.github.staudlol.database;
  * Date: 02/03/2022 - 12:06
  */
 
-import lombok.Builder;
+import lombok.Data;
 
-@Builder
+@Data
 public abstract class DatabaseImplementation {
 
     private final String host;
