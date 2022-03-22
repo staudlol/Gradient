@@ -17,5 +17,5 @@ public interface CustomObject {
      * @return the success rate.
      */
 
-    boolean spawn(Player player);
+    void spawn(Player player);
 }

@@ -55,7 +55,7 @@ public class TestObject implements CustomObject {
      * @return the success rate.
      */
     @Override
-    public boolean spawn(Player player) {
+    public void spawn(Player player) {
         final Location location = player.getLocation();
         final Wolf wolf = location.getWorld().spawn(location, Wolf.class);
 
@@ -63,7 +63,9 @@ public class TestObject implements CustomObject {
         return true;
     }
 }
+
 ```
+
 # Registering a Custom Object
 ```java
 public class ObjectRegister {
