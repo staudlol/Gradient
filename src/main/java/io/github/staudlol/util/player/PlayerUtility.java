@@ -8,9 +8,12 @@ package io.github.staudlol.util.player;
 
 import lombok.experimental.UtilityClass;
 import org.bukkit.Effect;
+import org.bukkit.FireworkEffect;
 import org.bukkit.GameMode;
 import org.bukkit.Sound;
+import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.potion.PotionEffect;
 
 import java.lang.reflect.InvocationTargetException;
@@ -24,6 +27,13 @@ public class PlayerUtility {
 
     public void playEffect(Player player, Effect effect) {
         player.playEffect(player.getLocation(), Effect.valueOf(effect.name()), 20);
+    }
+
+    public void launchFirework(Player player, FireworkEffect effect) {
+        final Firework firework = player.getWorld().spawn(player.getEyeLocation(), Firework.class);
+        final FireworkMeta fireworkMeta = firework.getFireworkMeta();
+        fireworkMeta.addEffect(effect);
+        firework.setFireworkMeta(fireworkMeta);
     }
 
     public void clearInventory(Player player) {
