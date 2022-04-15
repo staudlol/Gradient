@@ -11,8 +11,6 @@ import lombok.Getter;
 @Getter
 public abstract class Module implements ModuleController {
 
-    private final ModuleRegistry registry = new ModuleRegistry();
-
     protected String moduleName;
 
     /**
@@ -23,7 +21,5 @@ public abstract class Module implements ModuleController {
 
     public Module(String moduleName) {
         this.moduleName = moduleName;
-
-        this.registry.initiateModule(this);
     }
 }
