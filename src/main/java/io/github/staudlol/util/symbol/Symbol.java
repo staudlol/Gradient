@@ -6,7 +6,6 @@ package io.github.staudlol.util.symbol;
  * Date: 17/03/2022 - 01:26
  */
 
-
 import lombok.experimental.UtilityClass;
 import org.apache.commons.lang.StringEscapeUtils;
 
@@ -20,7 +19,10 @@ public class Symbol {
     public static final String CIRCLE_STAR;
     public static final String TEARDROP_ASTERISK;
     public static final String RADIOACTIVE;
-    public static  final String FLOWER;
+    public static final String FLOWER;
+    public static final String BAR;
+    public static final String STAR;
+    public static final String HEART;
 
     static {
         DOT = StringEscapeUtils.unescapeJava("\\u2022");
@@ -31,5 +33,8 @@ public class Symbol {
         TEARDROP_ASTERISK = StringEscapeUtils.unescapeJava("\\u2743");
         RADIOACTIVE = StringEscapeUtils.unescapeJava("\\u2622");
         FLOWER = StringEscapeUtils.unescapeJava("\\u2055");
+        BAR = StringEscapeUtils.unescapeJava("\\u2759");
+        STAR = StringEscapeUtils.unescapeJava("\\u2605");
+        HEART = StringEscapeUtils.unescapeJava("\\u2764");
     }
 }
