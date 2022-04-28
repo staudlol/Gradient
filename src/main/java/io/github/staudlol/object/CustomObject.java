@@ -14,7 +14,6 @@ public interface CustomObject {
      * Spawn a custom object using the {@link Player}'s data.
      *
      * @param player the player to use.
-     * @return the success rate.
      */
 
     void spawn(Player player);

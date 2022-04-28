@@ -27,14 +27,14 @@ repositories {
 dependencies {
     compileOnly(
             'org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT',
-            'org.projectlombok:lombok:1.18.22'
+            'org.projectlombok:lombok:1.18.24'
     )
 
     implementation(
             'org.mongodb:mongo-java-driver:3.12.10'
     )
 
-    annotationProcessor('org.projectlombok:lombok:1.18.22')
+    annotationProcessor('org.projectlombok:lombok:1.18.24')
 }
 
 publishing {
